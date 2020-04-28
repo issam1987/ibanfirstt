@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wallets{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>wallets ✅</h1>
+
+
+
+
+    <style>
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+    </style>
+    <table border="1">
+<tr><td>id</td>
+<td>tag</td>
+<td>currency</td>
+<td>bookingAmount</td>
+<td>valueAmount</td>
+    <td>dateLastFinancialMovement</td>
+    <td>FinancialMovement</td>
+</tr>
+    {% for key in wallets %}
+        <tr><td> <a href="wallets/info/{{ key.id }}">{{ key.id }}</a>
+
+       </td>
+       <td>  {{ key.tag }}</td>
+       <td>  {{ key.currency }}</td>
+       <td>
+           {% for key2 in key.bookingAmount %}
+               <br>{{ key2 }}
+           {% endfor %}
+       </td>
+       <td>
+           {% for key2 in key.valueAmount %}
+               <br>{{ key2 }}
+           {% endfor %}
+       </td>
+       <td>  {{ key.dateLastFinancialMovement }}</td>
+            <td><a href="wallets/info_financial/{{ key.id }}">FinancialMovement</a></td>
+
+       {% endfor %}
+    </table>
+
+</div>
+{% endblock %}
