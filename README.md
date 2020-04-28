@@ -9,4 +9,4 @@ Usage
 $ cd ibanfirstt/
 $ symfony server:start
 
-access the application in your browser at the given URL (https://localhost:8000/wallets by default)
+access the application in your browser at the given URL http://127.0.0.1:8000/wallets 
